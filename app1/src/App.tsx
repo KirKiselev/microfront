@@ -4,7 +4,7 @@ import { useState, useRef } from "react";
 
 type DataToRender = { refToArray: Array<number> | null; index1: null | number; index2: null | number; needToChange: null | boolean };
 
-export const App = () => {
+const App = () => {
   const arrayRef = useRef<Array<number>>(new Array<number>());
 
   const [inputValue, setInputValue] = useState("");

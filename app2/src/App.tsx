@@ -82,18 +82,26 @@ const App = () => {
 
     console.log(call);
   }
-
+  console.log("Input string: (in state (in street .house.0).0.city.0)");
   getData("(in state (in street .house.0).0.city.0)");
   //state[0]city[0]street[0]house
+  console.log(obj.state[0].city[0].street[0].house);
+
+  console.log("Input string: (in state (in street .house.0).0.city.1)");
   getData("(in state (in street .house.0).0.city.1)");
   //state[1]city[0]street[0]house
+  console.log(obj.state[1].city[0].street[0].house);
+
+  console.log("Input string: (in state (in street .house.1).0.city.1)");
   getData("(in state (in street .house.1).0.city.1)");
   //state[1]city[0]street[1]house
-
-  console.log(obj.state[0].city[0].street[0].house);
-  console.log(obj.state[1].city[0].street[0].house);
   console.log(obj.state[1].city[0].street[1].house);
-  return <div>App2</div>;
+
+  return (
+    <div>
+      <p> Задача 2 решена частично. Функция getData переводит строку из "странной нотации" к виду object.key в порядке обращения к ним. Результат проверки выведен в консоль.</p>
+    </div>
+  );
 };
 
 export default App;
