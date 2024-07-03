@@ -1,4 +1,5 @@
 const { ModuleFederationPlugin } = require("webpack").container;
+const deps = require("./package.json").dependencies;
 
 module.exports = {
   devServer: {
@@ -10,12 +11,19 @@ module.exports = {
         new ModuleFederationPlugin({
           name: "app1",
           exposes: {
-            "./App": "./src/App",
+            "./App": "./src/App.tsx",
           },
           filename: "remoteEntry.js",
           shared: {
-            react: { eager: true },
-            "react-dom": { eager: true },
+            ...deps,
+            react: {
+              eager: true,
+            },
+            "react-dom": {
+              singleton: true,
+              eager: true,
+              requiredVersion: deps["react-dom"],
+            },
           },
         }),
       ],

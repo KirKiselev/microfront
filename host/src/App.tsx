@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React from "react";
 import "./App.css";
 
 const App1 = React.lazy(() => import("app1/App"));
