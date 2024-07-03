@@ -1,38 +1,154 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+p {
+  display: block;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+.application__wrapper {
+  margin: 0;
+  padding: 20px;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+  border: 1px solid black;
+  border-radius: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.application__inputForm {
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  gap: 5px;
+}
+.application__inputForm__input {
+  margin: 0;
+  padding: 0;
 }
 
-@keyframes App-logo-spin {
+.application__inputForm__input--warn {
+  margin: 0;
+  padding: 0;
+
+  background-color: red;
+}
+
+.application__inputForm__submitButton {
+  margin: 0;
+  padding: 0;
+}
+.application__inputForm__clearButton {
+  margin: 0;
+  padding: 0;
+}
+.application__arrayPresenter {
+  margin: 0;
+  padding: 15px;
+
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+.application__arrayPresenter__arrayElement {
+  margin: 0;
+  padding: 2px;
+
+  width: 30px;
+  height: 30px;
+
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: lightgreen;
+
+  text-align: center;
+}
+
+.application__arrayPresenter__arrayElement--active {
+  margin: 0;
+  padding: 2px;
+
+  width: 30px;
+  height: 30px;
+
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: lightyellow;
+
+  text-align: center;
+}
+
+.application__arrayPresenter__selectedItemsContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.application__arrayPresenter__arrayElement--active--moveRight {
+  margin: 0;
+  padding: 2px;
+
+  width: 30px;
+  height: 30px;
+
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: lightyellow;
+
+  text-align: center;
+
+  animation-name: moveToRight;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.application__arrayPresenter__arrayElement--active--moveLeft {
+  margin: 0;
+  padding: 2px;
+
+  width: 30px;
+  height: 30px;
+
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: lightyellow;
+
+  text-align: center;
+
+  animation-name: moveToLeft;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.application__sortButton {
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes moveToRight {
   from {
-    transform: rotate(0deg);
+    margin-right: -41px;
+    margin-left: 41px;
   }
+
   to {
-    transform: rotate(360deg);
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+}
+
+@keyframes moveToLeft {
+  from {
+    margin-right: 41px;
+    margin-left: -41px;
+  }
+
+  to {
+    margin-right: 0px;
+    margin-left: 0px;
   }
 }
